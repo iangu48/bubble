@@ -84,14 +84,11 @@ function combineDuplicates(dataArray) {
 				linkList.push(item.href[0]);
 			}
 
-			newArray.push({text: currentTitle, size: linkList.length * 25, href: linkList});
+			newArray.push({text: currentTitle, size: linkList.length * 50, href: linkList});
+			console.log({text: currentTitle, size: linkList.length * 50, href: linkList});
 		} else {
-<<<<<<< HEAD
-			newArray.push({text: currentTitle, size: 1 * 25, href: array[0].href[0]});
-=======
-			newArray.push({text: currentTitle, size: 1 * 25, href: dataArray[0].href[0]});
-			console.log({text: currentTitle, size: 1 * 25, href: dataArray[0].href[0]});
->>>>>>> a00022bee7f9cd40198152063cbe3428afd5544c
+			newArray.push({text: currentTitle, size: 1 * 50, href: dataArray[0].href[0]});
+			console.log({text: currentTitle, size: 1 * 50, href: dataArray[0].href[0]});
 		}
 
 		dataArray = dataArray.filter((a) => a.text !== currentTitle);

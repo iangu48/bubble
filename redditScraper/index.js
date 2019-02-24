@@ -16,11 +16,7 @@ async function scrapeData(subreddits) {
 	}
 	url += '/top/?sort=top&t=day';
 
-<<<<<<< HEAD
-	var obj = {'data': []};
-=======
 	let scrapedData = {'data': []};
->>>>>>> a00022bee7f9cd40198152063cbe3428afd5544c
 
 	const response = await request({
 		uri: url,
