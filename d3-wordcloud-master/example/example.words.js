@@ -9,7 +9,6 @@ xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         words = JSON.parse(this.responseText);
         words = words.data;
-        console.log(words);
         d3.wordcloud()
           .size([1000, 600])
           //.fill(d3.scale.ordinal().range(["#ff998c", "#ffe48c", "#c9ff8c", "#8ccfff", "#e28cff"]))
@@ -21,7 +20,6 @@ xmlhttp.onreadystatechange = function() {
           })
           .start();
     }
-
 };
 xmlhttp.open("GET", url, true);
 xmlhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
