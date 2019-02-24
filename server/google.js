@@ -8,17 +8,7 @@ const client = new language.LanguageServiceClient();
 async function getResponse (document) {
   // Detects entities in the document
   const [result] = await client.analyzeEntities({document});
-
   const entities = result.entities;
-
-  // console.log('Entities:');
-  // entities.forEach(entity => {
-  //   console.log(entity.name);
-  //   console.log(` - Type: ${entity.type}, Salience: ${entity.salience}`);
-  //   if (entity.metadata && entity.metadata.wikipedia_url) {
-  //     console.log(` - Wikipedia URL: ${entity.metadata.wikipedia_url}$`);
-  //   }
-  // });
   return entities;
 }
 
@@ -27,8 +17,8 @@ async function analyzeText(str) {
     content: str,
     type: 'PLAIN_TEXT',
   };
-  let test = await getResponse(document);
-  return test;
+  let response = await getResponse(document);
+  return response;
 }
 
 module.exports = {

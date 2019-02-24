@@ -1,8 +1,10 @@
 var express = require('express');
 var app = express();
+
 var cors = require('cors');
 app.use(cors());
 app.options("*", cors());
+
 var google = require('./google.js');
 var reddit = require('../redditScraper/index.js');
 
@@ -66,6 +68,9 @@ async function getData(subReddits) {
 	return {'data': dataArray};
 }
 
+/**
+* combineDuplicates(array): Merges all the elements in the data array with the same title.
+*/
 function combineDuplicates(array) {
 	let newArray = [];
 
