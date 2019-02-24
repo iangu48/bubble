@@ -67,7 +67,7 @@ async function getData(subReddits) {
 	dataArray = dataArray.sort((a, b) => b.size - a.size);
 
 	if (subReddits.includes("canada")) {
-		dataArray = dataArray.filter((item) => item.text !== "canada");
+		dataArray = dataArray.filter((item) => item.text.toUpperCase() !== "canada".toUpperCase());
 	}
 
 	return {'data': dataArray};
