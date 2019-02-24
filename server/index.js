@@ -66,6 +66,10 @@ async function getData(subReddits) {
 	dataArray = combineDuplicates(dataArray);
 	dataArray = dataArray.sort((a, b) => b.size - a.size);
 
+	if (subReddits.include("canada")) {
+		dataArray = dataArray.filter((item) => item.text !== "canada");
+	}
+
 	return {'data': dataArray};
 }
 
