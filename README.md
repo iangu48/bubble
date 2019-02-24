@@ -19,3 +19,10 @@ This application was created using:
 - JQuery
 - Google Cloud Natural Langauge API
 - Bootstrap
+
+## Contributors
+
+Frontend: [Annie Gao](https://github.com/tallspider) & [Joseph Wang](https://github.com/joseph001126)
+Backend: [Ian Gu](https://github.com/iangu48) & [Alice Cai](https://github.com/alice-cai)
+
+This project was created in under 36 hours at Hack the Valley 2019.
