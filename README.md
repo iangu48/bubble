@@ -19,6 +19,7 @@ This application was created using:
 - JQuery
 - Google Cloud Natural Langauge API
 - Bootstrap
+- [D3 Wordcloud](https://github.com/wvengen/d3-wordcloud), created by [wvengen](https://github.com/wvengen) and licensed under the MIT License
 
 ## Contributors
 
