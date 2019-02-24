@@ -1,45 +1,47 @@
-var express = require('express');
-var app = express();
-var cors = require('cors');
+const express = require('express');
+const app = express();
+
+const cors = require('cors');
 app.use(cors());
 app.options("*", cors());
-var google = require('./google.js');
-var reddit = require('../redditScraper/index.js');
+
+const google = require('./google.js');
+const reddit = require('../redditScraper/index.js');
 
 
 app.get('/', function (req, res) {
 	getData(["worldnews", "news", "worldevents"]).then(res.json.bind(res));
 
 	console.log(req.headers);
-	console.log("req made");
+	console.log("request made");
 })
 
 app.get('/science-and-technology', function (req, res) {
 	getData(["science", "technology"]).then(res.json.bind(res));
 
 	console.log(req.headers);
-	console.log("req made");
+	console.log("request made");
 })
 
 app.get('/canada', function (req, res) {
 	getData(["canada", "onguardforthee"]).then(res.json.bind(res));
 
 	console.log(req.headers);
-	console.log("req made");
+	console.log("request made");
 })
 
 app.get('/politics', function (req, res) {
 	getData(["politics", "worldpolitics", "ukpolitics", "eupolitics", "uspolitics"]).then(res.json.bind(res));
 
 	console.log(req.headers);
-	console.log("req made");
+	console.log("request made");
 })
 
 app.get('/entertainment', function (req, res) {
 	getData(["entertainment", "movies", "music", "books", "television"]).then(res.json.bind(res));
 
 	console.log(req.headers);
-	console.log("req made");
+	console.log("request made");
 })
 
 app.get('/sports', function (req, res) {
@@ -47,7 +49,7 @@ app.get('/sports', function (req, res) {
 		"climbing", "snowboarding", "skiing", "cricket", "tennis", "cycling", "boxing", "skateboarding", "golf"]).then(res.json.bind(res));
 
 	console.log(req.headers);
-	console.log("req made");
+	console.log("request made");
 })
 
 async function getData(subReddits) {
@@ -66,13 +68,15 @@ async function getData(subReddits) {
 	return {'data': dataArray};
 }
 
-function combineDuplicates(array) {
+/**
+* combineDuplicates(dataArray): Merges all the elements in the dataArray with the same title.
+*/
+function combineDuplicates(dataArray) {
 	let newArray = [];
 
-	while (array.length > 0) {
-		let currentTitle = array[0].text;
-
-		let curTitleArray = array.filter((a) => a.text === currentTitle);
+	while (dataArray.length > 0) {
+		let currentTitle = dataArray[0].text;
+		let curTitleArray = dataArray.filter((a) => a.text === currentTitle);
 
 		if (curTitleArray.length > 1) {
 			let linkList = [];
@@ -82,10 +86,15 @@ function combineDuplicates(array) {
 
 			newArray.push({text: currentTitle, size: linkList.length * 25, href: linkList});
 		} else {
+<<<<<<< HEAD
 			newArray.push({text: currentTitle, size: 1 * 25, href: array[0].href[0]});
+=======
+			newArray.push({text: currentTitle, size: 1 * 25, href: dataArray[0].href[0]});
+			console.log({text: currentTitle, size: 1 * 25, href: dataArray[0].href[0]});
+>>>>>>> a00022bee7f9cd40198152063cbe3428afd5544c
 		}
 
-		array = array.filter((a) => a.text !== currentTitle);
+		dataArray = dataArray.filter((a) => a.text !== currentTitle);
 	}
 
 	return newArray;
