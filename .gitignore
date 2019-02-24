@@ -104,3 +104,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# ian's google api key or some shit
+server/htv3-a648ac67a300.json
