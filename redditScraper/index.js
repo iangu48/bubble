@@ -8,8 +8,8 @@ async function scrapeData(str) {
 		url += "+" + str[i];
 	}
 	url += '/top/?sort=top&t=day';
-	var obj = {'data': []};
 
+	var obj = {'data': []};
 
 	const response = await request({
 		uri: url,
@@ -28,8 +28,6 @@ async function scrapeData(str) {
 
 	return obj;	
 }
-
-//let res = scrapeData(["worldnews", "science"]).then(console.log);
 
 module.exports = {
 	scrapeData
