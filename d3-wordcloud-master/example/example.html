@@ -1,11 +1,24 @@
 <html>
   <head>
     <meta charset="UTF-8">
+
+    <script src="example.words.js"></script>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
     <title>Link Cloud</title>
     <script src="../lib/d3/d3.js" charset="utf-8"></script>
     <script src="../lib/d3/d3.layout.cloud.js"></script>
     <script src="../d3.wordcloud.js"></script>
-    <script src="example.words.js"></script>
+    <script src="example.words2.js"></script>
+    <script src="example.words3.js"></script>
+
+
     <style media="screen">
       footer{
         font-family: fantasy;
@@ -20,19 +33,6 @@
   <body style="text-align: center">
 
     <div id="wordcloud"></div>
-
-    <script>
-      d3.wordcloud()
-        .size([1000, 600])
-        //.fill(d3.scale.ordinal().range(["#ff998c", "#ffe48c", "#c9ff8c", "#8ccfff", "#e28cff"]))
-        //.fill(d3.scale.ordinal().range(["#ff5b5b", "#ffb44c", "#ffff26", "#47ff69", "#3a9cff"]))
-        .fill(d3.scale.ordinal().range(["#000000", "#3d3d3d", "#828282", "#bcbcbc", "#e0e0e0", "#ff998c", "#ffe48c", "#c9ff8c", "#8ccfff", "#e28cff"]))
-        .words(words)
-        .onwordclick(function(d, i) {
-          if (d.href) { window.location = d.href; }
-        })
-        .start();
-    </script>
 
     <footer>
       Copyright Bubble 2019 ©
