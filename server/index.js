@@ -88,8 +88,8 @@ function combineDuplicates(dataArray) {
 			newArray.push({text: currentTitle, size: linkList.length * 50, href: linkList});
 			console.log({text: currentTitle, size: linkList.length * 50, href: linkList});
 		} else {
-			newArray.push({text: currentTitle, size: 1 * 50, href: dataArray[0].href[0]});
-			console.log({text: currentTitle, size: 1 * 50, href: dataArray[0].href[0]});
+			newArray.push({text: currentTitle, size: 1 * 50, href: [dataArray[0].href[0]]});
+			console.log({text: currentTitle, size: 1 * 50, href: [dataArray[0].href[0]]});
 		}
 
 		dataArray = dataArray.filter((a) => a.text !== currentTitle);
