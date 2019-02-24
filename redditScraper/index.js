@@ -24,7 +24,6 @@ async function scrapeData(str) {
 		var title = $(this).find('p.title > a.title').text().trim();
 		var href =  $(this).find('p.title > a.title').attr('href').trim();
 		obj.data.push({"text": title, "link": href})
-		fs.appendFileSync('reddit.txt', title + '\n\t' + href + '\n');
 	});
 
 	return obj;	
