@@ -64,6 +64,7 @@ async function getData(subReddits) {
 	}
 
 	dataArray = combineDuplicates(dataArray);
+	dataArray = dataArray.sort((a, b) => b.size - a.size);
 
 	return {'data': dataArray};
 }
