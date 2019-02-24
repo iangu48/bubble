@@ -13,35 +13,35 @@ app.get('/', function (req, res) {
 	getData(["worldnews", "news", "worldevents"]).then(res.json.bind(res));
 
 	console.log(req.headers);
-	console.log("req made");
+	console.log("request made");
 })
 
 app.get('/science-and-technology', function (req, res) {
 	getData(["science", "technology"]).then(res.json.bind(res));
 
 	console.log(req.headers);
-	console.log("req made");
+	console.log("request made");
 })
 
 app.get('/canada', function (req, res) {
 	getData(["canada", "onguardforthee"]).then(res.json.bind(res));
 
 	console.log(req.headers);
-	console.log("req made");
+	console.log("request made");
 })
 
 app.get('/politics', function (req, res) {
 	getData(["politics", "worldpolitics", "ukpolitics", "eupolitics", "uspolitics"]).then(res.json.bind(res));
 
 	console.log(req.headers);
-	console.log("req made");
+	console.log("request made");
 })
 
 app.get('/entertainment', function (req, res) {
 	getData(["entertainment", "movies", "music", "books", "television"]).then(res.json.bind(res));
 
 	console.log(req.headers);
-	console.log("req made");
+	console.log("request made");
 })
 
 app.get('/sports', function (req, res) {
@@ -49,7 +49,7 @@ app.get('/sports', function (req, res) {
 		"climbing", "snowboarding", "skiing", "cricket", "tennis", "cycling", "boxing", "skateboarding", "golf"]).then(res.json.bind(res));
 
 	console.log(req.headers);
-	console.log("req made");
+	console.log("request made");
 })
 
 async function getData(subReddits) {
