@@ -29,7 +29,7 @@ const cache = (duration) => {
 }
 
 const google = require('./google.js');
-const reddit = require('../redditScraper/index.js');
+const reddit = require('./redditScraper/index.js');
 
 
 app.get('/', cache(1800), function (req, res) {
