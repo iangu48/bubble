@@ -9,8 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@google-cloud/language": "^2.0.1",
+    "@google-cloud/language": "^2.1.0",
     "cors": "^2.8.5",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "memory-cache": "^0.2.0"
   }
 }
